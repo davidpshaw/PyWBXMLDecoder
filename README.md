@@ -3,11 +3,16 @@ PyWBXMLDecoder
 
 A WAP Binary XML (WBXML) Decoder Written in Python
 
-Written by David Shaw, david.shaw.aw AT gmail.com
+Written by David Shaw, shawd AT vmware.com
 
 Inspired by EAS Inspector for Fiddler
 https://easinspectorforfiddler.codeplex.com
 
+Updates
+==============
+Updated for Python 3 for compatibility with mitmproxy 2.0 and later
+
+Description
 ==============
 I was writing an Exchange ActiveSync client and found it very difficult to troubleshoot because the WBXML format is not human-readable.  I found a nice open source plugin for the Fiddler proxy, but because I use a Mac for development, Fiddler wasn't a good option.
 
