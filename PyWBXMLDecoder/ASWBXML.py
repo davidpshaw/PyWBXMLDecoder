@@ -270,6 +270,7 @@ class ASWBXML:
 		page.addToken(0x39, "FirstDayOfWeek")
 		page.addToken(0x3A, "OnlineMeetingConfLink")
 		page.addToken(0x3B, "OnlineMeetingExternalLink")
+		page.addToken(0x3C, "ClientUid")
 		self.codePages.append(page)
 		# endregion
 
@@ -349,6 +350,9 @@ class ASWBXML:
 		page.addToken(0x0B, "Status")
 		page.addToken(0x0C, "UserResponse")
 		page.addToken(0x0E, "InstanceId")
+		page.addToken(0x10, "ProposedStartTime")
+		page.addToken(0x11, "ProposedEndTime")
+		page.addToken(0x12, "SendResponse")
 		self.codePages.append(page)
 		# endregion
 
@@ -536,6 +540,7 @@ class ASWBXML:
 		page.addToken(0x38, "ApplicationName")
 		page.addToken(0x39, "ApprovedApplicationList")
 		page.addToken(0x3A, "Hash")
+		page.addToken(0x3B, "AccountOnlyRemoteWipe")
 		self.codePages.append(page)
 		# endregion
 
@@ -626,6 +631,24 @@ class ASWBXML:
 		page.addToken(0x19, "BodyPartPreference")
 		page.addToken(0x1A, "BodyPart")
 		page.addToken(0x1B, "Status")
+		page.addToken(0x1C, "Add")
+		page.addToken(0x1D, "Delete")
+		page.addToken(0x1E, "ClientId")
+		page.addToken(0x1F, "Content")
+		page.addToken(0x20, "Location")
+		page.addToken(0x21, "Annotation")
+		page.addToken(0x22, "Street")
+		page.addToken(0x23, "City")
+		page.addToken(0x24, "State")
+		page.addToken(0x25, "Country")
+		page.addToken(0x26, "PostalCode")
+		page.addToken(0x27, "Latitude")
+		page.addToken(0x28, "Longitude")
+		page.addToken(0x29, "Accuracy")
+		page.addToken(0x2A, "Altitude")
+		page.addToken(0x2B, "AltitudeAccuracy")
+		page.addToken(0x2C, "LocationUri")
+		page.addToken(0x2D, "InstanceId")
 		self.codePages.append(page)
 		# endregion
 
@@ -743,6 +766,10 @@ class ASWBXML:
 		page.addToken(0x11, "ClientId")
 		page.addToken(0x12, "Status")
 		page.addToken(0x13, "AccountId")
+		page.addToken(0x15, "Forwardees")
+		page.addToken(0x16, "Forwardee")
+		page.addToken(0x17, "ForwardeeName")
+		page.addToken(0x18, "ForwardeeEmail")
 		self.codePages.append(page)
 		# endregion
 
@@ -767,6 +794,9 @@ class ASWBXML:
 		page.addToken(0x11, "AccountId")
 		page.addToken(0x12, "FirstDayOfWeek")
 		page.addToken(0x13, "MeetingMessageType")
+		page.addToken(0x15, "IsDraft")
+		page.addToken(0x16, "Bcc")
+		page.addToken(0x17, "Send")
 		self.codePages.append(page)
 		# endregion
 
@@ -810,6 +840,34 @@ class ASWBXML:
 		page.addToken(0x16, "TemplateDescription")
 		page.addToken(0x17, "ContentOwner")
 		page.addToken(0x18, "RemoveRightsManagementDistribution")
+		self.codePages.append(page)
+		# endregion
+
+		# Code Page 25: Find
+		# region Find Code Page
+		page = ASWBXMLCodePage()
+		page.namespace = "Find:"
+		page.xmlns = "find"
+
+		page.addToken(0x05, "Find")
+		page.addToken(0x06, "SearchId")
+		page.addToken(0x07, "ExecuteSearch")
+		page.addToken(0x08, "MailBoxSearchCriterion")
+		page.addToken(0x09, "Query")
+		page.addToken(0x0A, "Status")
+		page.addToken(0x0B, "FreeText")
+		page.addToken(0x0C, "Options")
+		page.addToken(0x0D, "Range")
+		page.addToken(0x0E, "DeepTraversal")
+		page.addToken(0x11, "Response")
+		page.addToken(0x12, "Result")
+		page.addToken(0x13, "Properties")
+		page.addToken(0x14, "Preview")
+		page.addToken(0x15, "HasAttachments")
+		page.addToken(0x16, "Total")
+		page.addToken(0x17, "DisplayCc")
+		page.addToken(0x18, "DisplayBcc")
+    page.addToken(0x19, "GalSearchCriterion")
 		self.codePages.append(page)
 		# endregion
 		# endregion
