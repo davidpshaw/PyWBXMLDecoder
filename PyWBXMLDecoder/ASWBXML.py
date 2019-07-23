@@ -947,10 +947,11 @@ class ASWBXML:
 
 				strTag = self.codePages[self.currentCodePage].getTag(token)
 				if (strTag == None):
-					strTag = "UNKNOWN_TAG_{0,2:X}".format(token)
+					strTag = "UNKNOWN_TAG_0x{0:02X}_0x{1:02X}".format(self.currentCodePage, token)
 
 				newNode = self.xmlDoc.createElement(strTag)
 				# not sure if this should be set on every node or not
+				# See https://blogs.msdn.microsoft.com/openspecification/2013/02/04/how-to-manually-decode-an-activesync-wbxml-stream/
 				#newNode.setAttribute("xmlns", self.codePages[self.currentCodePage].xmlns)
 				
 				currentNode.appendChild(newNode)
