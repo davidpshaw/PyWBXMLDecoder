@@ -867,7 +867,10 @@ class ASWBXML:
 		page.addToken(0x16, "Total")
 		page.addToken(0x17, "DisplayCc")
 		page.addToken(0x18, "DisplayBcc")
-    page.addToken(0x19, "GalSearchCriterion")
+		page.addToken(0x19, "GalSearchCriterion")
+		page.addToken(0x20, "MaxPictures")
+		page.addToken(0x21, "MaxSize")
+		page.addToken(0x22, "Picture")
 		self.codePages.append(page)
 		# endregion
 		# endregion
