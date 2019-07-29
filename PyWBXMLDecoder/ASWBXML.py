@@ -928,7 +928,7 @@ class ASWBXML:
 					break
 			elif  ( currentByte == GlobalTokens.OPAQUE ):
 				CDATALength = wbXMLBytes.dequeueMultibyteInt()
-				newOpaqueNode = self.xmlDoc.createCDATASection(wbXMLBytes.dequeueString(CDATALength))
+				newOpaqueNode = self.xmlDoc.createCDATASection(wbXMLBytes.dequeueBlob(CDATALength).hex())
 				currentNode.appendChild(newOpaqueNode)
 
 			elif  ( currentByte == GlobalTokens.STR_I ):
