@@ -76,27 +76,23 @@ class ASWBXMLByteQueue(Queue):
             if not self.checkContinuationBit(singleByte):
                 return iReturn
 
-    def dequeueString(self, length=None):
-        if ( length != None):
-            currentByte = 0x00
-            strReturn = ""
-            for i in range(0, length):
-                # TODO: Improve this handling. We are technically UTF-8, meaning
-                # that characters could be more than one byte long. This will fail if we have
-                # characters outside of the US-ASCII range
-                if ( self.qsize() == 0 ):
-                    break
-                currentByte = self.dequeueAndLog()
-                strReturn += chr(currentByte)
+    def dequeueBlob(self, length):
+        currentByte = 0x00
+        strReturn = bytearray()
+        for i in range(0, length):
+            if ( self.qsize() == 0 ):
+                break
+            currentByte = self.dequeueAndLog()
+            strReturn.append(currentByte)
+        return bytes(strReturn)
 
-        else:
-            currentByte = 0x00
-            strReturn = ""
-            while True:
-                currentByte = self.dequeueAndLog()
-                if (currentByte != 0x00):
-                    strReturn += chr(currentByte)
-                else:
-                    break
-
-        return strReturn
+    def dequeueString(self):
+        currentByte = 0x00
+        strReturn = bytearray()
+        while True:
+            currentByte = self.dequeueAndLog()
+            if (currentByte != 0x00):
+                strReturn.append(currentByte)
+            else:
+                break
+        return strReturn.decode('utf-8', errors='backslashreplace')
